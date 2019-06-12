@@ -95,7 +95,7 @@ def getdataOPTES(file, conversionAU_DEB=2.5415802529):
                 transitiondipole.append(transdip)
     return name, wavelength, oscillator, energy, orbitals, dipole, transitiondipole
 
-def getdataTPA(file, conversion=1.896788*10**(-50)):
+def getdataTPA(file):
     energy = []
     cross_section = []
     name = file.split('/')[-3]
