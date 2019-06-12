@@ -1,4 +1,12 @@
-def getdataGS(file): #solo il dipolo
+#######################################
+# 
+# Funzioni per estrarre dati 
+# da file tipo gaussian
+#
+######################################
+import numpy as np
+
+def getdataGS(file):
     dipole = []
     name = file.split('/')[-3]
     with open(file, 'r') as log:
@@ -99,4 +107,3 @@ def getdataTPA(file, conversion=1.896788*10**(-50)):
                         energy.append(energ)
                         cross_section.append(cross)
     return name, energy, cross_section
-
