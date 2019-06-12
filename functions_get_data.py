@@ -6,15 +6,18 @@
 ######################################
 import numpy as np
 
+def get_name(file):
+    name = file.split('/')[-3]
+    return name
+
 def getdataGS(file):
     dipole = []
-    name = file.split('/')[-3]
     with open(file, 'r') as log:
         log_output = log.readlines()
     dipole_last_line = max(i for i, line in enumerate(log_output) if 'Dipole moment (field-independent basis, Debye):' in line)
     dip = float(log_output[dipole_last_line + 1].split()[-1])
     dipole.append(dip)
-    return name, dipole
+    return dipole
 
 def getdataES(file, conversionAU_DEB=2.5415802529):
     wavelength = []
