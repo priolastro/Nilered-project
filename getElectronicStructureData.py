@@ -1,21 +1,23 @@
 import os
 import re
 import numpy as np
+from get_dati import *
+from get_file import *
 
 def getdataGSDICT():
     valoriES={}
-    for file in get_file.getOPTGSdiff_file():
+    for file in getOPTGSdiff_file():
         lista=[]
-        name, dipole =get_dati.getdataGS(file)
+        name, dipole = getdataGS(file)
         lista.append(dipole)
         valoriES[name]=lista
     return valoriES
 
 def getdataESDICT():
     valoriES={}
-    for file in get_file.getESdiff_file():
+    for file in getESdiff_file():
         lista=[]
-        name, wavelength, oscillator, energy, orbitals, dipole, transitiondipole=get_dati.getdataES(file)
+        name, wavelength, oscillator, energy, orbitals, dipole, transitiondipole = getdataES(file)
         lista.append(wavelength)
         lista.append(oscillator)
         lista.append(energy)
@@ -27,9 +29,9 @@ def getdataESDICT():
 
 def getdataOPTESDICT():
     valoriOPTES={}
-    for file in get_file.getOPTESdiff_file():
+    for file in getOPTESdiff_file():
         lista=[]
-        name, wavelength, oscillator, energy, orbitals, dipole, transitiondipole =get_dati.getdataOPTES(file)
+        name, wavelength, oscillator, energy, orbitals, dipole, transitiondipole = getdataOPTES(file)
         lista.append(wavelength)
         lista.append(oscillator)
         lista.append(energy)
@@ -41,9 +43,9 @@ def getdataOPTESDICT():
 
 def getdataTPADICT():
     valoriTPA={}
-    for file in get_file.getTPAdiff_file():
+    for file in getTPAdiff_file():
         lista=[]
-        name, energy, cross = get_dati.getdataTPA(file)
+        name, energy, cross = getdataTPA(file)
         lista.append(energy)
         lista.append(cross)
         valoriTPA[name]=lista
