@@ -1,13 +1,7 @@
-import os
-import re
 import numpy as np
 
-def printa(n):
-    return n**2
 
-
-
-def getdataGS(file): #solo il dipolo
+def getdataGS(file):
     dipole = []
     name = file.split('/')[-3]
     with open(file, 'r') as log:

@@ -1,6 +1,3 @@
-import os
-import re
-import numpy as np
 from get_dati import *
 from get_file import *
 

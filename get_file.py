@@ -1,6 +1,5 @@
 import os
 import re
-import numpy as np
 
 def getOPTGSdiff_file(path='/Users/salvatoreprioli/Desktop/sdu/nilered_PROJ/ElectrStr/'):
     lista=[]
