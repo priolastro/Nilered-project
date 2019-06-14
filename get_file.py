@@ -1,7 +1,7 @@
 import os
 import re
 
-def getOPTGSdiff_file(path):
+def getOPTGSdiff_file(path='/Users/salvatoreprioli/Desktop/sdu/nilered_PROJ/ElectrStr/'):
     lista=[]
     for dirpath, dirname, filename in os.walk(path):
         if 'elecStruct' in dirpath and '.trash' not in dirpath and os.path.basename(dirpath)=='elecStruct':
@@ -13,7 +13,7 @@ def getOPTGSdiff_file(path):
                     lista.append(filepath)
     return sorted(lista)
 
-def getESdiff_file(path):
+def getESdiff_file(path='/Users/salvatoreprioli/Desktop/sdu/nilered_PROJ/ElectrStr/'):
     lista=[]
     for dirpath, dirname, filename in os.walk(path):
         if 'elecStruct' in dirpath and '.trash' not in dirpath and os.path.basename(dirpath)=='elecStruct':
@@ -23,7 +23,7 @@ def getESdiff_file(path):
                     lista.append(filepath)
     return sorted(lista)
 
-def getOPTESdiff_file(path):
+def getOPTESdiff_file(path='/Users/salvatoreprioli/Desktop/sdu/nilered_PROJ/ElectrStr/'):
     lista=[]
     for dirpath, dirname, filename in os.walk(path):
         if 'elecStruct' in dirpath and '.trash' not in dirpath and os.path.basename(dirpath)=='elecStruct':
@@ -33,7 +33,7 @@ def getOPTESdiff_file(path):
                     lista.append(filepath)
     return sorted(lista)
 
-def getTPAdiff_file(path):
+def getTPAdiff_file(path='/Users/salvatoreprioli/Desktop/sdu/nilered_PROJ/ElectrStr/'):
     lista = []
     for dirpath, dirname, filename in os.walk(path):
         if 'elecStruct' in dirpath and '.trash' not in dirpath and os.path.basename(dirpath) == 'elecStruct':
