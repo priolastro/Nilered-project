@@ -3,18 +3,18 @@ from get_file import *
 from get_dict import *
 from print_latex import *
 
-def getdataGSDICT():
+def getdataGSDICT(path):
     valoriES={}
-    for file in getOPTGSdiff_file():
+    for file in getOPTGSdiff_file(path):
         lista=[]
         name, dipole = getdataGS(file)
         lista.append(dipole)
         valoriES[name]=lista
     return valoriES
 
-def getdataESDICT():
+def getdataESDICT(path):
     valoriES={}
-    for file in getESdiff_file():
+    for file in getESdiff_file(path):
         lista=[]
         name, wavelength, oscillator, energy, orbitals, dipole, transitiondipole = getdataES(file)
         lista.append(wavelength)
@@ -26,9 +26,9 @@ def getdataESDICT():
         valoriES[name]=lista
     return valoriES
 
-def getdataOPTESDICT():
+def getdataOPTESDICT(path):
     valoriOPTES={}
-    for file in getOPTESdiff_file():
+    for file in getOPTESdiff_file(path):
         lista=[]
         name, wavelength, oscillator, energy, orbitals, dipole, transitiondipole = getdataOPTES(file)
         lista.append(wavelength)
@@ -40,9 +40,9 @@ def getdataOPTESDICT():
         valoriOPTES[name]=lista
     return valoriOPTES
 
-def getdataTPADICT():
+def getdataTPADICT(path):
     valoriTPA={}
-    for file in getTPAdiff_file():
+    for file in getTPAdiff_file(path):
         lista=[]
         name, energy, cross = getdataTPA(file)
         lista.append(energy)
