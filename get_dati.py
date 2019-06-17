@@ -95,10 +95,33 @@ def getdataTPA(file, conversion=1.896788*10**(-50)):
         out_output = out.readlines()
         for i, line in enumerate(out_output):
             if 'Two-photon absorption summary ' in line:
-                for l in range(i, i+30):
+                for l in range(i, i+10):
                     if '1   1' in out_output[l] and 'Linear' in out_output[l]:
                         energ=float(out_output[l].split()[2])
                         cross=float(out_output[l].split()[7])
                         energy.append(energ)
                         cross_section.append(cross)
     return name, energy, cross_section
+
+def getData1PADalton(snapshot, conversionAU_DEB=2.5415802529):
+    wavelengths=[]
+    oscillator=[]
+    transitiondipolemoment=[]
+    with open(snapshot, 'r') as file:
+        lines=file.readlines()
+        for i, row in enumerate(lines):
+            if '@ Excited state no:    1 in symmetry 1' in row:
+                wavel=lines[i+4].split()[1]
+                wavel=float(wavel)
+                xdiplen=float(lines[i+9].split()[5])
+                ydiplen=float(lines[i+12].split()[5])
+                zdiplen=float(lines[i+15].split()[5])
+                xtdm=float(lines[i+9].split()[9])
+                ytdm=float(lines[i+12].split()[9])
+                ztdm=float(lines[i+15].split()[9])
+                osc = (xdiplen + ydiplen + zdiplen)
+                tdm = (xtdm + ytdm + ztdm)
+                wavelengths.append(float(wavel))
+                oscillator.append(float(osc))
+                transitiondipolemoment.append(float(tdm)*conversionAU_DEB)
+    return wavelengths, oscillator, transitiondipolemoment

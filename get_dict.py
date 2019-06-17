@@ -14,7 +14,7 @@ def getdataGSDICT(path):
 
 def getdataESDICT(path):
     valoriES={}
-    for file in getESdiff_file(path):
+    for file in getES631_file(path):
         lista=[]
         name, wavelength, oscillator, energy, orbitals, dipole, transitiondipole = getdataES(file)
         lista.append(wavelength)
@@ -42,7 +42,7 @@ def getdataOPTESDICT(path):
 
 def getdataTPADICT(path):
     valoriTPA={}
-    for file in getTPAdiff_file(path):
+    for file in getTPA631_file(path):
         lista=[]
         name, energy, cross = getdataTPA(file)
         lista.append(energy)
